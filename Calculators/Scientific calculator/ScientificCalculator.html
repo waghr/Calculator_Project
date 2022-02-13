@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	    body{
+				margin:10;
+				background: radial-gradient(#FFFF00, black) no-repeat fixed;
+			}
+			button.clear{
+				background: #FF0000;
+			}
+			button.equal{
+				width: 250%;
+			}
+			table{
+				background: black;
+				padding: 7px 5px;
+				border: 6px solid black;
+				border-radius: 10px;
+				margin-top: 80px;
+				box-shadow: 0px 0px 27px black;
+			}
+			button{
+				width: 50px;
+				height: 30px;
+				border-radius: 50px;
+				font-size: 15px;
+				font-family: cursive;
+			}
+			input[type="text"]{
+				width: 95%;
+				height: 30px;
+				font-size: 20px;
+				font-family: cursive;
+				border-radius: 30px;
+			}
+	</style>
+</head>
+<body>
+<form name="Calculator">
+	<table align="center">
+		<tr>
+			<td colspan="5">
+				<input type="text" name="result" placeholder="0" style="text-align:right">
+			</td>
+		</tr>
+		<tr>
+			<td><button type="button" value="sin" onclick="sin()"> sin </button> </td>
+			<td><button type="button" value="cos" onclick="cos()"> cos </button> </td>
+			<td><button type="button" value="tan" onclick="tan()"> tan </button> </td>
+			<td><button type="button" value="%" onclick="number(value)"> % </button> </td>
+			<td colspan="2"><button type="button" onclick="remove()" class="clear"> C </button> </td>
+		</tr>
+		<tr>
+			<td><button type="button" value="x^2" onclick="square()"> x<sup>2 </button> </td>
+		  <td><button type="button" value="x^3" onclick="qubbed()"> x<sup>3 </button> </td>
+			<td><button type="button" value="sqrt2" onclick="sqrt2()"> &radic; </button> </td>
+			<td><button type="button" value="sqrt3" onclick="sqrt3()"> &#8731; </button> </td>
+			<td><button type="button" value="BACKSPC" onclick="BACKSPC()"> < </button> </td>
+		</tr>
+		<tr>
+			<td><button type="button" value="1" onclick="number(value)"> 1 </button> </td>
+			<td><button type="button" value="2" onclick="number(value)"> 2 </button> </td>
+			<td><button type="button" value="3" onclick="number(value)"> 3 </button> </td>
+      <td><button type="button" value="+" onclick="number(value)"> + </button> </td>
+			<td><button type="button" value="*" onclick="number(value)"> * </button> </td>
+		</tr>
+		<tr>
+			<td><button type="button" value="4" onclick="number(value)"> 4 </button> </td>
+			<td><button type="button" value="5" onclick="number(value)"> 5 </button> </td>
+			<td><button type="button" value="6" onclick="number(value)"> 6 </button> </td>
+			<td><button type="button" value="-" onclick="number(value)"> - </button> </td>
+			<td><button type="button" value="/" onclick="number(value)"> / </button> </td>
+		</tr>
+		<tr>
+			<td><button type="button" value="7" onclick="number(value)"> 7 </button> </td>
+			<td><button type="button" value="8" onclick="number(value)"> 8 </button> </td>
+			<td><button type="button" value="9" onclick="number(value)"> 9 </button> </td>
+			<td><button type="button" value="0" onclick="number(value)"> 0 </button> </td>
+      <td><button type="button" value="." onclick="number(value)"> . </button> </td>
+		</tr>
+		<tr>
+			<td colspan="2"><button type="button" value="=" onclick="equal()" class="equal"> = </button> </td>
+		</tr>
+	</table>
+</form>
+
+<script type="text/javascript">
+	function sin() {
+		document.Calculator.result.value=Math.sin(document.Calculator.result.value);
+	}
+	function cos() {
+		document.Calculator.result.value=Math.cos(document.Calculator.result.value);
+	}
+	function tan() {
+		document.Calculator.result.value=Math.tan(document.Calculator.result.value);
+	}
+	function BACKSPC(){
+		var a= document.Calculator.result.value;
+		document.Calculator.result.value = a.substr(0,a.length-1);
+	}
+	function square(){
+		document.Calculator.result.value = Math.pow(document.Calculator.result.value,2);
+	}
+	function qubbed(){
+		document.Calculator.result.value = Math.pow(document.Calculator.result.value,3);
+	}
+	function sqrt2(){
+		document.Calculator.result.value = Math.pow(document.Calculator.result.value,1/2);
+	}
+	function sqrt3(){
+		document.Calculator.result.value = Math.pow(document.Calculator.result.value,1/3);
+	}
+	function number(value){
+		document.Calculator.result.value += value;
+	}
+	function clear(){
+		document.Calculator.result.value = value;
+	}
+	function equal(){
+		document.Calculator.result.value = eval(document.Calculator.result.value);
+	}
+	function remove(){
+		document.Calculator.result.value = " ";
+	}
+</script>
+</body>
+</html>

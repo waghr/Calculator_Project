@@ -1,0 +1,36 @@
+.container
+{
+	text-align: center;	/*align Calculator text at center*/
+}
+table
+{
+	
+	margin: auto;     /*brought table in between*/
+}
+input{
+	border-radius: 20px;
+	border: 2px solid;
+	font-size:20px;       /*increase font siz of input box*/
+	width:430px;
+	height:50px;
+}
+button{
+	
+	font-size: 20px;          
+	background : chartreuse;
+	
+    width:100px;
+    height:65px;  
+  border-radius:20px;	
+}
+h1{
+	background-image:url('nature1.jpg');
+	height:200px;
+	font-size:225%;
+}
+.calculator{
+	
+	background-color: #FFFF00;
+	display:inline-block;
+	border-radius:20px;
+}
